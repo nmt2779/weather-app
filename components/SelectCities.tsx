@@ -35,7 +35,7 @@ export function SelectCities() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[250px] justify-between"
+          className="w-[250px] lg:w-[350px] justify-between"
         >
           {cityParam ? cityParam : "Chọn thành phố ..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -47,26 +47,26 @@ export function SelectCities() {
           <CommandList>
             <CommandEmpty>Không tìm thấy kết quả.</CommandEmpty>
             <CommandGroup>
-              {OTHER_LARGE_CITIES.sort((a, b) => a.city > b.city ? 1 : -1).map(
-                (item) => (
-                  <CommandItem key={item.city} value={item.city}>
-                    <Link
-                      key={item.city}
-                      scroll={false}
-                      href={`/search?lat=${item.coord.lat}&lon=${item.coord.lon}&city=${item.city}`}
-                      className="flex w-full items-center"
-                    >
-                      <Check
-                        className={cn(
-                          "mr-2 h-4 w-4",
-                          item.city === cityParam ? "opacity-100" : "opacity-0"
-                        )}
-                      />
-                      {item.city}
-                    </Link>
-                  </CommandItem>
-                )
-              )}
+              {OTHER_LARGE_CITIES.sort((a, b) =>
+                a.city > b.city ? 1 : -1
+              ).map((item) => (
+                <CommandItem key={item.city} value={item.city}>
+                  <Link
+                    key={item.city}
+                    scroll={false}
+                    href={`/search?lat=${item.coord.lat}&lon=${item.coord.lon}&city=${item.city}`}
+                    className="flex w-full items-center"
+                  >
+                    <Check
+                      className={cn(
+                        "mr-2 h-4 w-4",
+                        item.city === cityParam ? "opacity-100" : "opacity-0"
+                      )}
+                    />
+                    {item.city}
+                  </Link>
+                </CommandItem>
+              ))}
             </CommandGroup>
           </CommandList>
         </Command>

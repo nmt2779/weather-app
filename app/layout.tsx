@@ -6,9 +6,8 @@ import { CodeXmlIcon } from "lucide-react";
 import Navigation from "@/components/Navigation";
 
 const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["400", "700"],
   variable: "--font-nunito",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
