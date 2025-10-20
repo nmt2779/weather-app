@@ -38,7 +38,7 @@ export default function RootLayout({
             >
               <CodeXmlIcon className="h-5 w-5 " />
               <span>by</span>
-              <b>MTN</b>
+              <b>Nguyễn Minh Thông</b>
             </footer>
           </div>
         </ThemeProvider>
