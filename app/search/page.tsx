@@ -3,7 +3,6 @@ import { getHourlyData } from "@/actions/getHourlyData";
 import CurrentWeather from "@/components/widgets/CurrentWeather";
 import DailyForecast from "@/components/widgets/DailyForecast";
 import HourlyForecast from "@/components/widgets/HourlyForecast";
-import OtherLargeCities from "@/components/widgets/OtherLargeCities";
 import WeatherWidgets from "@/components/widgets/WeatherWidgets";
 import { AirPollutionResponse, CurrentAndForecastResponse } from "@/lib/types";
 import { Metadata } from "next";
@@ -15,11 +14,9 @@ type SearchParamsProps = {
   city: string;
 };
 
-export async function generateMetadata(
-  props: {
-    searchParams: Promise<SearchParamsProps>;
-  }
-): Promise<Metadata> {
+export async function generateMetadata(props: {
+  searchParams: Promise<SearchParamsProps>;
+}): Promise<Metadata> {
   const searchParams = await props.searchParams;
   const { city } = searchParams;
 
@@ -29,11 +26,9 @@ export async function generateMetadata(
   };
 }
 
-export default async function SearchPage(
-  props: {
-    searchParams: Promise<SearchParamsProps>;
-  }
-) {
+export default async function SearchPage(props: {
+  searchParams: Promise<SearchParamsProps>;
+}) {
   const searchParams = await props.searchParams;
   const { lat, lon, city } = searchParams;
 

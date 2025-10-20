@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { ModeToggle } from "./ModeToggle";
 import Search from "./Search";
 import { SelectCities } from "./SelectCities";
@@ -14,7 +15,13 @@ export default function Navigation() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <SelectCities/>
+          <Suspense
+            fallback={
+              <div className="w-[250px] lg:w-[350px] h-10 bg-gray-200 animate-pulse rounded"></div>
+            }
+          >
+            <SelectCities />
+          </Suspense>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <ModeToggle />
