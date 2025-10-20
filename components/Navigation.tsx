@@ -17,7 +17,7 @@ export default function Navigation() {
         <NavigationMenuItem>
           <Suspense
             fallback={
-              <div className="w-[250px] lg:w-[350px] h-10 bg-gray-200 animate-pulse rounded"></div>
+              <div className="w-[250px] lg:w-[350px] h-10 bg-gray-100 animate-pulse rounded"></div>
             }
           >
             <SelectCities />
